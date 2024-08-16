@@ -1,0 +1,28 @@
+<IfModule mod_rewrite.c>
+    # Activar o modo de reescrita
+    RewriteEngine On
+
+    # Impedir a listagem de diretórios
+    Options -Indexes
+
+    # Verificar se a sessão está ativa
+    RewriteCond %{REQUEST_URI} !^/index\.html
+    RewriteCond %{REQUEST_URI} !^/login\.php
+    RewriteCond %{REQUEST_URI} !^/logout\.php
+    RewriteCond %{HTTP_COOKIE} SESSION=
+    RewriteRule ^ - [L,R=403]
+
+    # Permitir visualização e download, mas bloquear acesso direto
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Bloquear o acesso direto às pastas e arquivos do site
+    RewriteRule ^(uploads|path/to/other/folder|file\.html) - [F,L]
+
+    # Verificar o referenciador para permitir solicitações locais
+    RewriteCond %{HTTP_REFERER} !^http://localhost/ [NC]
+
+    # Redirecionar para index.html passando a URL como parâmetro
+    RewriteRule ^(.*)$ index.html?url=$1 [NC,L]
+</IfModule>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Justino Melembe" />
+    <title>Sistema de Gestão do Fundo Social</title>
+    <link rel="stylesheet" href="./style/estiloreg.css" />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    
+  </head>
+  <body>
+    <div class="logo">
+      <img src="./image/logofs1.png" alt="" />
+    </div>
+    <h2>Entre em Contacto Connosco</h2>
+
+    <form method="post" action="contact.php">
+      <div class="input">
+        <hr />
+
+        <label for="nome"><b>Nome</b></label>
+        <input type="text" id="nome" name="nome" placeholder="Teu nome.." />
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" id="email" name="email" placeholder="Teu email.." />
+
+        <label for="assunto"><b>Assunto</b></label>
+        <input
+          type="text"
+          id="assunto"
+          name="assunto"
+          placeholder="Assunto.."
+        />
+
+        <label for="descricao"><b>Descrição</b></label>
+        <textarea
+          id="descricao"
+          name="descricao"
+          placeholder="Faça a descrição do assunto..."
+          style="height: 200px"
+        ></textarea>
+        <hr />
+        <input type="submit" class="button" name="submit" value="Submeter" />
+        <input type="reset" class="button" name="reset" value="Limpar" />
+       
+      </div>
+    </form>
+    <a href="dashboard__membro.html" class="button">Voltar</a>
+  </body>
+</html>

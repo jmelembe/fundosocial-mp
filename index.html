@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Justino Melembe" />
+    <title>Login Page - Sistema de Gestão do Fundo Social</title>
+    <link rel="stylesheet" href="./style/login.css" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css" />
+    <meta name="keywords" content="fundo social-trac, trac-fundo social, fundo social">
+<body background="./image/02.jpg">
+    <div class="logo">
+        <img src="./image/logofs1.jpg" alt="logofs1.jpg" />
+    </div>
+
+    <div class="container">
+        <section>
+            <h1>Tens Conta Cadastrada?</h1><br>
+            <form method="post" action="login_phpcod.php">
+                <h2>Login</h2>
+                <div class="input-field">
+                    <input
+                        type="text"
+                        class="input"
+                        name="username"
+                        placeholder="Nome do Usuario"
+                        required
+                    />
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </div>
+                <div class="input-field">
+                    <input
+                        type="Password"
+                        class="input"
+                        name="password"
+                        placeholder="Senha do Usuario"
+                        required
+                    />
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                </div>
+                <div class="button-group">
+                    <input
+                        type="submit"
+                        class="submit"
+                        value="Login"
+
+                    />
+                    <input type="reset" class="cancel-btn" value="Cancel" />
+                </div>
+                
+                <script>
+                    function onSubmit() {
+                        // Limpar os campos do formulário após o envio
+                        document.getElementsByName("username")[0].value = "";
+                        document.getElementsByName("password")[0].value = "";
+            
+                        // Retornar true para permitir o envio do formulário
+                        return true;
+                    }
+                </script>
+            </form>
+        </section>
+
+        <section class="remember-me">
+            <input type="checkbox" id="check" />
+            <label for="check">Remember-me</label>
+        </section>
+    </div>
+</body>
+</html>
